@@ -57,6 +57,16 @@
 			android:layout_marginRight="10dip"
 			android:onClick="onFragmentsClick"
 			android:text="@string/button_list_and_grid" />
+
+		<ImageView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:minWidth="240dp"
+			android:minHeight="90dp"
+			android:background="#ce1818"
+			android:id="@+id/imageView" />
+
+
 	</LinearLayout>
 
 </ScrollView>

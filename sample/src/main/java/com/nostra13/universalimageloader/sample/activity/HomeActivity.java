@@ -21,6 +21,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
+
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.sample.Constants;
 import com.nostra13.universalimageloader.sample.R;
@@ -42,6 +44,8 @@ public class HomeActivity extends Activity {
 
 	private static final String TEST_FILE_NAME = "Universal Image Loader @#&=+-_.,!()~'%20.png";
 
+	private ImageView imageView;
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -51,6 +55,19 @@ public class HomeActivity extends Activity {
 		if (!testImageOnSdCard.exists()) {
 			copyTestImageToSdCard(testImageOnSdCard);
 		}
+
+		 imageView = (ImageView)findViewById(R.id.imageView);
+
+
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+
+		//ImageLoader.getInstance().displayImage("http://img2.wtoip.com/resize_600x2222/publish/ad/20160520/2016_05_20_14_18_30OqhdQc.jpg", imageView);
+
+		ImageLoader.getInstance().displayImage("http://img2.wtoip.com/publish/ad/20160520/2016_05_20_14_18_30OqhdQc.jpg?", imageView);
 	}
 
 	public void onImageListClick(View view) {
